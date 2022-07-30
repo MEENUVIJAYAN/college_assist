@@ -1,0 +1,30 @@
+<div class="container" id="departments">
+        <div class="row mt-5 justify-content-center">
+          <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
+            <h2 class="section-title tit">Admin Login</h2>
+          </div>
+          <li class="cta2"><a href="/" class="nav-link"><span>Back</span></a></li>
+        </div>
+      </div>
+    
+
+<div class="container1">
+
+      <div class="container1-wrapper">
+
+          <h3 class="login-text"><i class="bi bi-person-circle ac-logo"></i>Login</h3>
+             <form id="submitForm" action="/loginreq" method="POST" enctype="application/x-www-form-urlencoded">
+              {{#if loginErr}}
+              <div class="alert alert-danger alert-dismissible fade show mt-3" style="border-radius: 10px" role="alert">
+                <strong>Alert!</strong> Incorrect credentials
+              </div>
+              {{/if}}
+              <div class="item"><input class="input" name="username" type="text" placeholder="Username"></div> 
+              <div class="item"><input class="input" type="password" name="password" placeholder="Password"> </div>
+
+              <div class="item submit"><button type="submit">Submit</button></div>
+          </form>
+          {{!-- <span class="ac"><a href="#">Sign Up</a></span> --}}
+      </div>
+
+  </div>

@@ -1,0 +1,202 @@
+<header>
+    <nav>
+      <div id="navbar1">
+        <div id="logo1" class="reverse">
+          <div class="site-logo mr-auto w-20 ml-5">GECB</div>
+
+        </div>
+        <div id="links1">
+          {{#if logout1}}
+        <li class="cta1"><a class="nav-link" href="/it"><span>Back</span></a></li>
+        {{else}}
+        <li class="cta1"><a class="nav-link" href="/EEE"><span>Back</span></a></li>
+        {{/if}}
+        </div>
+      </div>
+
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mySidenav" class="sidenav">
+      <a style="cursor:pointer;" class="closebtn" onclick="closeNav()">&times;</a>
+        {{#if logout1}}
+        <li class="cta1"><a class="nav-link" href="/it"><span>Back</span></a></li>
+        {{else}}
+        <li class="cta1"><a class="nav-link" href="/EEE"><span>Back</span></a></li>
+        {{/if}}
+    </div>
+  </header>
+  <main id="main">
+
+
+  <!-- ======= Breadcrumbs Section ======= -->
+  <section class="breadcrumbs">
+    <div class="container" id="blur">
+
+      <div class="d-flex justify-content-between align-items-center c1">
+        <h2 class="tb">Time Table</h2>
+        {{!-- {{#if editable}} --}}
+        {{!-- <button type="button" class="btn btn-danger mobbut d-md-flex d-none butit"  onclick="toggle()"><i
+            class="fas fa-upload"></i>&nbsp; Upload</button> --}}
+        {{!-- <a type="button" href="/card-upload" class="btn btn-danger mobbut d-flex d-md-none"><i
+            class="fas fa-upload"></i>&nbsp; Upload</a> --}}
+            <a href="/card-upload1" class="btn btn-primary">Add Time Table</a> 
+        {{!-- {{/if}} --}}
+        {{!-- <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Table</li>
+        </ol> --}}
+      </div>
+      {{#if alert}}
+      <div class="alert alert-danger alert-dismissible fade show mt-3" style="border-radius: 10px" role="alert">
+        <strong>Alert!</strong> Incorrect credentials
+      </div>
+      {{/if}}
+
+      <div class="table responsive mt-5 d-none d-md-flex">
+        {{#if editable}}
+
+        <table class="table table-striped zoom roundedTable t1">
+          <thead class="tab1">
+            <tr>
+              <th width="5%" scope="col">Sl.No</th>
+              <th width="22%" scope="col">Semester</th>
+              <th width="10%" scope="col">Published Date</th>
+              <th width="7%" scope="col">Timetable</th>
+              <th width="7%" scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each data }}
+            <tr>
+              <th scope="row">{{this.index}}</th>
+              <td>{{this.subject}}</td>
+              <td>{{this.date}}</td>
+              <td style='padding-top: 15px;'> <a class='buttoncsi' href="/report/{{this._id}}.pdf" target="_blank"><i class="fas fa-upload"></i>
+                  View uploads</a></td>
+              <td>
+                <a class="delete" href="{{this.deleteLink}}{{this._id}}" title="Delete"
+                  data-toggle="tooltip">&nbsp;&nbsp;<i class="fas fa-trash-alt"></i></a>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        {{else}}
+        <table class="table table-striped zoom roundedTable t1">
+          <thead class="tab1">
+            <tr>
+              <th width="5%" scope="col">Sl.No</th>
+              <th width="16%" scope="col">Description</th>
+              <th width="16%" scope="col">Published Date & time</th>
+              <th width="7%" scope="col">View Upload</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each data }}
+            <tr>
+              <th scope="row">{{this.index}}</th>
+              <td>{{this.subject}}</td>
+              <td>{{this.date}}</td>
+              <td style='padding-top: 15px;'> <a class='buttoncsi btn' href="/report/{{this._id}}.pdf" target="_blank"><i class="fas fa-upload"></i>
+                  View uploads</a></td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        {{/if}}
+      </div>
+
+      <section id="card" class="d-flex d-md-none">
+        {{#if editable}}
+
+        {{#each data }}
+
+        <div class="card-deck col-sm-3  mt-3">
+          <div class="text-center">
+            <div class="card cardv1 ">
+              <div class="card-body">
+                <h3 class="card-title mb-3">{{this.subject}}</h3>
+                <p>{{this.date}}</p>
+                <a class='buttoncsimob btn' href="/report/{{this._id}}.pdf" target="_blank"><i class="fas fa-upload"></i> View
+                  uploads</a></td>
+
+                <a class="deletemob" href="{{this.deleteLink}}{{this._id}}" title="Delete"
+                  data-toggle="tooltip">&nbsp;&nbsp;<i class="fas fa-trash-alt"></i></a>
+
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+        {{/each}}
+
+        {{else}}
+
+        {{#each data }}
+        <div class="card-deck col-sm-3  mt-3">
+          <div class="text-center">
+            <div class="card cardv2">
+              <div class="card-body">
+                <h3 class="card-title ">{{this.subject}}</h3>
+                <p>{{this.date}}</p>
+
+                <a class='buttoncsimob btn mt-4' href="/report/{{this._id}}.pdf" target="_blank"><i
+                    class="fas fa-upload"></i> View uploads</a>
+              </div>
+              </div>
+          </div>
+        </div>
+
+                {{/each}}
+
+                {{/if}}
+
+      </section>
+
+
+
+    </div>
+
+    
+
+    <div class="container">
+      <div id="pop-up">
+
+        <section>
+          <div class="container  mt-2 pt-3 pb-4">
+            <div class="row ">
+              <div class="col-md-8 m-auto">
+                <div class="ficon" onclick="toggle()"><i class="fas fa-times"></i></div>
+                <h2 class="text-center" style="font-weight: bolder;color:#010483;">Add new News</h2>
+
+                <form action={{link}} method="POST" enctype="multipart/form-data">
+                  <label for="" class="mt-3">Subject</label>
+                  <input type="text" name="subject" class="form-control" id="name">
+
+                  <label class="mt-3">Select Pdf</label>
+                  <input type="file" name="Report" class="form-control-file">
+
+                  <button type="submit" class="btn  secondary-btn btn-block mt-4 btnadd" id="realBtn"
+                    onclick="toggle()">Add</button>
+
+                </form>
+                <div id="loadingBtn" class="text-center" style="display:none;">
+                  <div class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+
+    </div>
+  </section><!-- End Breadcrumbs Section -->
+
+</main><!-- End #main -->

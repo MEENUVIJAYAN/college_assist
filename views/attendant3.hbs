@@ -1,0 +1,140 @@
+<header>
+    <nav>
+      <div id="navbar1">
+        <div id="logo1" class="reverse">
+          <div class="site-logo mr-auto w-20 ml-5">GECB</div>
+
+        </div>
+        <div id="links1">
+          <li class="cta1"><a href="/it" class="nav-link"><span>Back</span></a></li>
+        </div>
+      </div>
+
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mySidenav" class="sidenav">
+      <a style="cursor:pointer;" class="closebtn" onclick="closeNav()">&times;</a>
+        <li class="cta1"><a href="/it" class="nav-link"><span>Back</span></a></li>
+    </div>
+  </header>
+  <main id="main">
+
+
+  <!-- ======= Breadcrumbs Section ======= -->
+  <section class="breadcrumbs">
+    <div class="container" id="blur">
+
+      <div class="d-flex justify-content-between align-items-center c1">
+        <h2 class="tb">Attendance</h2>
+        {{!-- {{#if editable}} --}}
+        {{!-- <button type="button" class="btn btn-danger mobbut d-md-flex d-none butit"  onclick="toggle()"><i
+            class="fas fa-upload"></i>&nbsp; Upload</button> --}}
+        {{!-- <a type="button" href="/card-upload" class="btn btn-danger mobbut d-flex d-md-none"><i
+            class="fas fa-upload"></i>&nbsp; Upload</a> --}}
+        {{!-- {{/if}} --}}
+        {{!-- <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Table</li>
+        </ol> --}}
+      </div>
+      {{#if alert}}
+      <div class="alert alert-danger alert-dismissible fade show mt-3" style="border-radius: 10px" role="alert">
+        <strong>Alert!</strong> Incorrect credentials
+      </div>
+      {{/if}}
+
+      <div class="table responsive mt-5 d-none d-md-flex">
+        {{#if editable}}
+
+        <table class="table table-striped zoom roundedTable t1">
+          <thead class="tab1">
+               <tr>
+              <th width="5%" scope="col">Sl.No</th>
+              <th width="10%" scope="col">Name</th>
+              <th width="7%" scope="col">Roll No</th>
+              <th width="7%" scope="col">Semester</th>
+              <th width="7%" scope="col">Sub3</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each finalData }}
+             <tr>
+              <th scope="row">{{this.index}}</th>
+              <td>{{this.Username}}</td>
+              <td>{{this.RollNo}}</td>
+              <td>{{this.Semester}}</td>
+                 <td>{{this.Att3}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        {{else}}
+        <table class="table table-striped zoom roundedTable t1">
+          <thead class="tab1">
+            <tr>
+              <th width="5%" scope="col">Sl.No</th>
+              <th width="10%" scope="col">Name</th>
+              <th width="7%" scope="col">Roll No</th>
+              <th width="7%" scope="col">Semester</th>
+              <th width="7%" scope="col">Sub3</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each finalData }}
+            <tr>
+             <th scope="row">{{this.index}}</th>
+              <td>{{this.Username}}</td>
+              <td>{{this.RollNo}}</td>
+              <td>{{this.Semester}}</td>
+                 <td>{{this.Att3}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        {{/if}}
+      </div>
+
+      <section id="card" class="d-flex d-md-none">
+        {{#if editable}}
+
+        {{#each finalData }}
+
+        <div class="card-deck col-sm-3  mt-3">
+          <div class="text-center">
+            <div class="card cardv1 ">
+              <div class="card-body">
+                <h3 class="card-title mb-3">{{this.Username}}</h3>
+                <p>{{this.RollNo}}</p>
+                <p>{{this.Semester}}</p>
+                 <p>{{this.Att3}}</p>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+        {{/each}}
+
+        {{else}}
+
+        {{#each finalData }}
+         <div class="card-deck col-sm-3  mt-3">
+          <div class="text-center">
+            <div class="card cardv1 ">
+              <div class="card-body">
+               <h3 class="card-title mb-3">{{this.Username}}</h3>
+                <p>{{this.RollNo}}</p>
+                <p>{{this.Semester}}</p>
+                 <p>{{this.Att3}}</p>
+              </div>
+            </div>
+          </div>
+          </div>
+                {{/each}}
+
+                {{/if}}
+
+    </div>
+  </section><!-- End Breadcrumbs Section -->
+
+</main><!-- End #main -->

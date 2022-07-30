@@ -1,0 +1,60 @@
+
+<div class="container" id="departments">
+        <div class="row mt-5 justify-content-center">
+          <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
+            <h2 class="section-title">Add Marks</h2>
+          </div>
+		     <li class="cta2"><a href="/mark" class="nav-link"><span>Back</span></a></li>
+        </div>
+      </div>
+    <div class="row6">
+    <div class="col-md-4 m-auto">
+        <div class="card mt-3 mb-3 card6">
+	<div class="card-body">
+		<div class="card-text">
+			
+			<form action={{link}} method="POST">
+			{{#if loginErr}}
+			<p class="error">{{loginErr}}</p>
+			{{/if}}
+				<div class="form-group">
+					<label for="exampleInputEmail1">Username</label>
+					<input type="name" class="form-control form-control-sm" name = "Username" id="exampleInputEmail1" placeholder="Username">
+				</div>
+                <div class="form-group">
+					<label for="exampleInputEmail1">Semester</label>
+					<input type="name" class="form-control form-control-sm" name = "Semester" id="exampleInputEmail1"placeholder="Semester" >
+				</div>
+                <div class="form-group">
+					<label for="exampleInputEmail1">SeriesNo</label>
+					<input type="number" class="form-control form-control-sm" name = "SeriesNo" id="exampleInputEmail1" placeholder="SeriesNo"  >
+				</div>
+                <div class="form-group">
+					<label for="exampleInputEmail1">Sub1</label>
+					<input type="number" class="form-control form-control-sm" name = "Sub1" id="exampleInputEmail1" placeholder="Add Marks" >
+				</div>
+                <div class="form-group">
+					<label for="exampleInputEmail1">Sub2</label>
+					<input type="number" class="form-control form-control-sm" name = "Sub2" id="exampleInputEmail1" placeholder="Add Marks">
+				</div>
+                <div class="form-group">
+					<label for="exampleInputEmail1">Sub3</label>
+					<input type="number" class="form-control form-control-sm" name = "Sub3" id="exampleInputEmail1"placeholder="Add Marks" >
+				</div>
+                <div class="form-group">
+					<label for="exampleInputEmail1">Sub4</label>
+					<input type="name" class="form-control form-control-sm" name = "Sub4" id="exampleInputEmail1"placeholder="Add Marks" >
+				</div>
+                <div class="form-group">
+					<label for="exampleInputEmail1">Sub5</label>
+					<input type="name" class="form-control form-control-sm" name = "Sub5" id="exampleInputEmail1" placeholder="Add Marks">
+				</div>
+				
+				<button type="submit" class="btn btn-primary btn9">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+    </div>
+</div>

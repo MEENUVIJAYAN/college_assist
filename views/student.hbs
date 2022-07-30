@@ -1,0 +1,137 @@
+
+  <header>
+    <nav>
+      <div id="navbar1">
+        <div id="logo1" class="reverse">
+          <div class="site-logo mr-auto w-20 ml-5">GECB</div>
+
+        </div>
+        <div id="links1">
+          <li class="cta1"><a href="/login1" class="nav-link"><span>Logout</span></a></li>
+        </div>
+      </div>
+
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mySidenav" class="sidenav">
+      <a style="cursor:pointer;" class="closebtn" onclick="closeNav()">&times;</a>
+        <li class="cta1"><a href="/login1" class="nav-link"><span>Logout</span></a></li>
+    </div>
+  </header>
+<section>
+    <div class="rt-container">
+          <div class="col-rt-12">
+              <div class="Scriptcontent">
+              
+<!-- Student Profile -->
+<div class="student-profile py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card shadow-sm mb-3">
+        
+          <div class="card-header bg-transparent text-center">
+            <img class="profile_img" src="images/person_4.jpg" alt="student dp">
+           {{#each umarks}}
+            <h3>{{this.Username}}</h3>
+            {{/each}}
+          </div>
+          <div class="card-body">
+             {{#each umarks}}
+            <p class="mb-0"><strong class="pr-1">Name:</strong>{{this.Username}}</p>
+            <p class="mb-0"><strong class="pr-1">Branch</strong>IT</p>
+            <p class="mb-0"><strong class="pr-1">Semester</strong>{{this.Semester}}</p>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            {{#each umarks}}
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>S4 Series  {{this.SeriesNo}} Mark</h3>
+          </div>
+          <div class="card-body pt-0">
+            <table class="table table-bordered">
+              <tr>
+                <th width="30%">Sub1</th>
+                <td width="2%">:</td>
+                <td>{{this.Sub1}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Sub2</th>
+                <td width="2%">:</td>
+                <td>{{this.Sub2}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Sub3</th>
+                <td width="2%">:</td>
+                <td>{{this.Sub3}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Sub4</th>
+                <td width="2%">:</td>
+                <td>{{this.Sub4}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Sub5</th>
+                <td width="2%">:</td>
+                <td>{{this.Sub5}}</td>
+              </tr>
+              {{/each}}
+            </table>
+          </div>
+        </div>
+         {{!-- <div class="card shadow-sm mt-3">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>S4 Second Series Mark</h3>
+          </div>
+          <div class="card-body pt-0">
+            <table class="table table-bordered">
+              <tr>
+                <th width="30%">Sub1</th>
+                <td width="2%">:</td>
+                <td>24</td>
+              </tr>
+              <tr>
+                <th width="30%">Sub2</th>
+                <td width="2%">:</td>
+                <td>49</td>
+              </tr>
+              <tr>
+                <th width="30%">Sub3</th>
+                <td width="2%">:</td>
+                <td>34</td>
+              </tr>
+              <tr>
+                <th width="30%">Sub4</th>
+                <td width="2%">:</td>
+                <td>44</td>
+              </tr>
+              <tr>
+                <th width="30%">Sub5</th>
+                <td width="2%">:</td>
+                <td>33</td>
+              </tr>
+            </table>
+          </div>
+        </div> --}}
+          <div style="height: 26px"></div>
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Remarks</h3>
+          </div>
+          <div class="card-body pt-0">
+              <p>Average Performance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+           
+    		</div>
+		</div>
+    </div>
+</section>
